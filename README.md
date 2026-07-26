@@ -29,9 +29,7 @@
 <h3 align="center">🧾 whoami</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/$_whoami-noQbot-ff4048?style=flat-square&labelColor=000000" /><br/>
-  <img src="https://img.shields.io/badge/$_cat_.purpose-building_VinvAI_—_AI_that_reads_your_codebase,_not_the_vibes-d71921?style=flat-square&labelColor=000000" /><br/>
-  <img src="https://img.shields.io/badge/$_cat_.status-online_·_zero_queue_·_answering_now-b3151c?style=flat-square&labelColor=000000" />
+  <img width="78%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/whoami.svg" alt="whoami — noQbot terminal" />
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:d71921,100:000000&height=3&section=header" alt="divider" />

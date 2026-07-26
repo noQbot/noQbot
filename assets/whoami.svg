@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 356" width="900" height="356" font-family="'JetBrains Mono','SFMono-Regular','Consolas','Courier New',monospace">
+  <defs>
+    <radialGradient id="wglow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#d71921" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#d71921" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#d71921" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- window -->
+  <rect x="12" y="10" width="876" height="332" rx="14" fill="#08080a" stroke="#d71921" stroke-opacity="0.35" filter="url(#wshadow)"/>
+  <ellipse cx="450" cy="12" rx="430" ry="90" fill="url(#wglow)"/>
+
+  <!-- title bar -->
+  <path d="M12 24 a14 14 0 0 1 14 -14 h848 a14 14 0 0 1 14 14 v28 h-876 z" fill="#0f0f12"/>
+  <circle cx="38" cy="38" r="6.5" fill="#ff4048"><animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite"/></circle>
+  <circle cx="62" cy="38" r="6.5" fill="#3a3a3d"/>
+  <circle cx="86" cy="38" r="6.5" fill="#3a3a3d"/>
+  <text x="450" y="43" text-anchor="middle" font-size="15" fill="#7a7a7a">noQbot — ~/vinv — zsh</text>
+  <line x1="12" y1="52" x2="888" y2="52" stroke="#d71921" stroke-opacity="0.18"/>
+
+  <!-- body -->
+  <g font-size="20">
+    <!-- $ whoami -->
+    <g opacity="0">
+      <text x="40" y="100"><tspan fill="#ff4048">➜</tspan><tspan fill="#6f6f74">  ~ </tspan><tspan fill="#f4f4f4">whoami</tspan></text>
+      <animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.35s" fill="freeze"/>
+    </g>
+    <g opacity="0">
+      <text x="40" y="136" font-weight="700" fill="#ff4048">noQbot</text>
+      <animate attributeName="opacity" from="0" to="1" begin="0.75s" dur="0.35s" fill="freeze"/>
+    </g>
+
+    <!-- $ cat .purpose -->
+    <g opacity="0">
+      <text x="40" y="180"><tspan fill="#ff4048">➜</tspan><tspan fill="#6f6f74">  ~ </tspan><tspan fill="#f4f4f4">cat .purpose</tspan></text>
+      <animate attributeName="opacity" from="0" to="1" begin="1.35s" dur="0.35s" fill="freeze"/>
+    </g>
+    <g opacity="0">
+      <text x="40" y="216" font-size="18" fill="#cfcfcf">building VinvAI — AI that reads your codebase, not the vibes</text>
+      <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.35s" fill="freeze"/>
+    </g>
+
+    <!-- $ cat .status -->
+    <g opacity="0">
+      <text x="40" y="260"><tspan fill="#ff4048">➜</tspan><tspan fill="#6f6f74">  ~ </tspan><tspan fill="#f4f4f4">cat .status</tspan></text>
+      <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.35s" fill="freeze"/>
+    </g>
+    <g opacity="0">
+      <text x="40" y="296" fill="#ff8a8f">online · zero queue · answering now</text>
+      <animate attributeName="opacity" from="0" to="1" begin="3.05s" dur="0.35s" fill="freeze"/>
+    </g>
+
+    <!-- prompt + blinking cursor -->
+    <g opacity="0">
+      <text x="40" y="332"><tspan fill="#ff4048">➜</tspan><tspan fill="#6f6f74">  ~ </tspan><tspan fill="#ff4048">█</tspan></text>
+      <animate attributeName="opacity" from="0" to="1" begin="3.5s" dur="0.3s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;1;0.15;0.15" dur="1.05s" begin="3.9s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
