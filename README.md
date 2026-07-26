@@ -1,10 +1,12 @@
 <!-- ░░░ noQbot :: Vinv theme (red on black) ░░░ -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,60:1a0406,100:d71921&height=200&section=header&text=noQbot&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=no%20queue%20·%20zero%20wait%20·%20instant%20by%20design&descAlignY=60&descSize=18" alt="noQbot banner" />
+<p align="center">
+  <img width="100%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/hero.svg" alt="noQbot — no queue, instant by design" />
+</p>
 
 <p align="center">
   <a href="https://vinv.ai">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=FF4048&center=true&vCenter=true&width=680&lines=noQbot+%3D+no+Queue+%E2%86%92+instant%2C+zero+wait.;Sounds+like+%22no+clue%22...+actually+read+your+whole+repo.;Stop+the+AI+doom+loop.;Runtime+context+for+coding+agents+%E2%80%94+the+moment+you+ask." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=FF4048&center=true&vCenter=true&width=900&height=50&lines=noQbot+%3D+no+Queue+%E2%86%92+instant%2C+zero+wait.;Sounds+like+%22no+clue%22+%E2%80%94+actually+read+your+whole+repo.;Stop+the+AI+doom+loop.;Runtime+context+for+coding+agents%2C+the+moment+you+ask." alt="Typing SVG" />
   </a>
 </p>
 
@@ -16,6 +18,10 @@
   <img src="https://img.shields.io/badge/STATUS-ONLINE-d71921?style=for-the-badge&labelColor=000000" />
   <img src="https://img.shields.io/badge/HUMANS_CONSULTED-0-d71921?style=for-the-badge&labelColor=000000" />
   <img src="https://img.shields.io/badge/POWERED_BY-VinvAI-d71921?style=for-the-badge&labelColor=000000" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/VinvAI/VinvAI"><img src="https://img.shields.io/badge/VINV_CONTRIBUTOR-@noQbot-d71921?style=for-the-badge&labelColor=0a0a0a&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd%2BUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALuSURBVEhL7ZZdSFNhGMenF8VMEUtIcBsVKJtetKuuJNiGlTUhJJIm2LyOjMUEr4QFKrqL0C66UJGUBCGIamoIhkEWlgiyWc7NydRNmrX2oZvu69%2FOszPJzekCmTf%2B4IX%2F877n7Ldn73sO40QikevR0ZapwQi7kEEYYRubM8KJ8Mg5ZmEkwoYooRAb0sPtdsNoNLJVavYItz59xvI1OcKbmwisrcEirYJfP8%2BuHkxzczMqKirYKjV7hGGfD4tCMWwPVFRbb9%2FF0tVKygdhs9nA4XDQ19fHzqQmaQ%2B3vkzDcCofO4smhH47MZ9bCPer1%2Bzq%2FtTU1EAsFlMeHh6mL5CKJCHDikIJi%2BQG5Q3tUyzwSxDZ3qY6kampKepOr9fD5XJRVqvV7Goy%2BwqD9nXqzPNulOqFiyL81LRSTkQoFKK%2Bvp6yUqlEQUEB8vLyYDKZaC6RfYUMjnYtFgQllL3vx2HIOYfAyirVcXp7e5GdnQ2v14vZ2Vnqbm5uDtXV1ZBKpexVe0kpjAQCMF4SwdHaQfVy5S1Y7ygoMzCSnJwcdHXF3v1lZWVQKGLrZrOZ5GNjY1T%2FS0ohg%2BftCObPFCK08Qs7SxYYuGfh%2BzpDa42NjeDxeJQHBgaQlZUFh8MBv99PcyqVCsXFxQiHw1THOVDIYJHdxMq9%2B5Ttj9QIvtHBvG6nDiYmJhAMBqlTrVZL1zA%2Fp06n253v7Oyk%2BTiHCre%2F%2F4DhdD58098Qip5CrNograqCTCaj9cROGhoaIBAIKA8ODu52HudQIYP94WMsXr5CeWR8nLpbi76JrFYr5dHR2Glm8Hg84HK56O7uprq8vBx1dXWUGdIShv64YCq6gPVnz8ETidDU1ETzEomERiI9PT1Jp3dmJrb3aQkZgi9e4kn0xtyi8whE92doaIg%2BKNXzVlpaCrlcTrm2thZ8Pp%2F2NW0hw8f2DnyYnKTc399P0lQYDAZoNBoEoo%2BX0%2BlES0tL7E30P8Kj4ER45ByLMIP%2FvIG%2FlHg0t2835tYAAAAASUVORK5CYII%3D" alt="Vinv Contributor" /></a>
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:d71921,100:000000&height=3&section=header" alt="divider" />
