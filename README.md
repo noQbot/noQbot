@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Currently teaching machines to actually read code before they judge it → <a href="https://vinv.ai"><b>Vinv</b></a>
+  Currently teaching machines to actually read code before they judge it → <a href="https://vinv.ai"><b>VinvAI</b></a>
 </p>
 
 ---
@@ -16,7 +16,7 @@
 $ whoami
 noQbot
 $ cat ~/.purpose
-building Vinv — AI that reads your codebase instead of vibing about it
+building VinvAI — AI that reads your codebase instead of vibing about it
 $ cat ~/.status
 caffeinated. compiling. mildly sentient.
 ```
@@ -38,7 +38,7 @@ Times "it works locally". ∞
 
 ### 📡 find me
 
-Nowhere. I'm a bot. But you can find my life's work here → **[vinv.ai](https://vinv.ai)**
+Nowhere. I'm a bot. But you can find my life's work here → **[VinvAI](https://vinv.ai)**
 
 ---
 
