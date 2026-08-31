@@ -64,7 +64,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=noQbot&hide_border=true&bg_color=000000&color=ff4048&line=d71921&point=ffffff&area=true&area_color=1a0406" alt="contribution graph" width="95%" />
+  <img src="https://ghchart.rshah.org/d71921/noQbot" alt="contribution graph" width="95%" />
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:d71921,100:000000&height=3&section=header" alt="divider" />
