@@ -1,36 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" font-family="'JetBrains Mono','SFMono-Regular','Consolas','Courier New',monospace">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" font-family="'Space Grotesk','Segoe UI Variable','Segoe UI',system-ui,sans-serif">
   <defs>
-    <radialGradient id="redglow" cx="50%" cy="0%" r="78%">
-      <stop offset="0%" stop-color="#d71921" stop-opacity="0.42"/>
-      <stop offset="55%" stop-color="#d71921" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#d71921" stop-opacity="0"/>
+    <radialGradient id="blueglow" cx="50%" cy="0%" r="78%">
+      <stop offset="0%" stop-color="#0F89F1" stop-opacity="0.34"/>
+      <stop offset="55%" stop-color="#0F89F1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0F89F1" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ff4048" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ff4048" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#ff4048" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0F89F1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0F89F1" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0F89F1" stop-opacity="0"/>
     </linearGradient>
-    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="12" result="b"/>
+    <filter id="softglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="b"/></feMerge>
     </filter>
     <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M44 0H0V44" fill="none" stroke="#d71921" stroke-opacity="0.07" stroke-width="1"/>
+      <path d="M44 0H0V44" fill="none" stroke="#0F89F1" stroke-opacity="0.06" stroke-width="1"/>
     </pattern>
   </defs>
 
-  <!-- card -->
-  <rect x="2" y="2" width="1196" height="336" rx="18" fill="#050506" stroke="#d71921" stroke-opacity="0.35"/>
-  <rect x="2" y="2" width="1196" height="336" rx="18" fill="url(#grid)"/>
-  <ellipse cx="600" cy="20" rx="540" ry="150" fill="url(#redglow)"/>
+  <!-- card : obsidian ground, 1px hairline (Inverse: flat, no shadow) -->
+  <rect x="2" y="2" width="1196" height="336" rx="16" fill="#050506" stroke="#0F89F1" stroke-opacity="0.30"/>
+  <rect x="2" y="2" width="1196" height="336" rx="16" fill="url(#grid)"/>
+  <ellipse cx="600" cy="18" rx="540" ry="150" fill="url(#blueglow)"/>
 
   <!-- scanline -->
-  <rect x="4" y="6" width="1192" height="2" fill="#ff4048" opacity="0.16">
+  <rect x="4" y="6" width="1192" height="2" fill="#0F89F1" opacity="0.14">
     <animate attributeName="y" values="12;326;12" dur="6s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- HUD corner brackets -->
-  <g stroke="#ff4048" stroke-width="3" fill="none" stroke-opacity="0.85">
+  <!-- HUD corner brackets (square ticks) -->
+  <g stroke="#0F89F1" stroke-width="3" fill="none" stroke-opacity="0.85">
     <path d="M28 60 V28 H60"/>
     <path d="M1140 28 H1172 V60"/>
     <path d="M28 280 V312 H60"/>
@@ -38,32 +38,53 @@
   </g>
 
   <!-- top labels -->
-  <text x="42" y="52" font-size="15" fill="#8f8f8f">// vinv.ai</text>
-  <text x="1096" y="51" font-size="15" fill="#d8d8d8" text-anchor="end">LIVE</text>
-  <circle cx="1110" cy="46" r="5" fill="#ff4048">
+  <text x="42" y="52" font-size="15" font-family="'Geist Mono','JetBrains Mono','Consolas',monospace" fill="#8b9099">// inverse-vibe</text>
+  <text x="1096" y="51" font-size="15" font-family="'Geist Mono','JetBrains Mono','Consolas',monospace" fill="#d8d8d8" text-anchor="end">LIVE</text>
+  <circle cx="1110" cy="46" r="5" fill="#7BB926">
     <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- glow layer (only Q visible) -->
-  <text x="418" y="188" font-size="96" font-weight="700" letter-spacing="2" text-anchor="start" filter="url(#glow)" fill="#ff4048">
-    <tspan fill="none">no</tspan><tspan>Q</tspan><tspan fill="none">bot</tspan>
-    <animate attributeName="opacity" values="0.3;0.95;0.3" dur="2.4s" repeatCount="indefinite"/>
-  </text>
+  <!-- ░ IV mark : boxed eval-bar I (Inverse) + script V (Vibe) ░ -->
+  <g transform="translate(62,78)">
+    <rect x="-6" y="-6" width="104" height="104" rx="26" fill="#0F89F1" opacity="0.22" filter="url(#softglow)"/>
+    <rect x="0" y="0" width="92" height="92" rx="22" fill="#0b0c10" stroke="#0F89F1" stroke-opacity="0.55"/>
+    <!-- I : evaluation bar, their share in ink, ours in blue -->
+    <rect x="23" y="22" width="15" height="48" rx="7.5" fill="#16181d" stroke="#2a2e36" stroke-width="1"/>
+    <rect x="23" y="22" width="15" height="20" rx="7.5" fill="#0F89F1"/>
+    <!-- V : Caveat's own V -->
+    <path d="M49 29 C51 45 55 59 60 66 C65 58 70 42 73 30 C74 26 76 24 79 23"
+          fill="none" stroke="#F9F7F9" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
   <!-- wordmark -->
-  <text x="418" y="188" font-size="96" font-weight="700" letter-spacing="2" text-anchor="start">
-    <tspan fill="#f4f4f4">no</tspan><tspan fill="#ff4048">Q</tspan><tspan fill="#f4f4f4">bot</tspan><tspan fill="#ff4048" dx="8">▮<animate attributeName="opacity" values="1;1;0;0" dur="1.05s" repeatCount="indefinite"/></tspan>
+  <text x="198" y="158" font-size="80" font-weight="700" letter-spacing="1" text-anchor="start" filter="url(#softglow)" fill="#0F89F1" opacity="0.5">
+    <tspan fill="none">no</tspan><tspan>Q</tspan><tspan fill="none">bot</tspan>
+  </text>
+  <text x="198" y="158" font-size="80" font-weight="700" letter-spacing="1" text-anchor="start">
+    <tspan fill="#F9F7F9">no</tspan><tspan fill="#0F89F1">Q</tspan><tspan fill="#F9F7F9">bot</tspan><tspan fill="#0F89F1" dx="8">▮<animate attributeName="opacity" values="1;1;0;0" dur="1.05s" repeatCount="indefinite"/></tspan>
   </text>
 
   <!-- underline + moving highlight -->
-  <rect x="420" y="210" width="352" height="2" fill="#d71921" opacity="0.3"/>
-  <rect x="420" y="209" width="120" height="3" fill="url(#sweep)">
-    <animate attributeName="x" values="420;652;420" dur="3.4s" repeatCount="indefinite"/>
+  <rect x="200" y="178" width="316" height="2" fill="#0F89F1" opacity="0.28"/>
+  <rect x="200" y="177" width="110" height="3" fill="url(#sweep)">
+    <animate attributeName="x" values="200;406;200" dur="3.4s" repeatCount="indefinite"/>
   </rect>
 
+  <!-- ░ two modes : Inverse (square, selected) · Vibe (console) ░ -->
+  <g transform="translate(600,205)" text-anchor="middle">
+    <!-- INVERSE : the one selected -> blue tint fill, blue ring, square glyph -->
+    <rect x="-150" y="-17" width="150" height="34" rx="10" fill="#0F89F1" fill-opacity="0.12" stroke="#0F89F1" stroke-opacity="0.9"/>
+    <rect x="-132" y="-6" width="12" height="12" rx="2" fill="none" stroke="#0F89F1" stroke-width="2"/>
+    <text x="-58" y="5" font-size="15" font-weight="600" letter-spacing="2" fill="#0F89F1">INVERSE</text>
+    <!-- VIBE : the alternate -> dark pill, script word -->
+    <rect x="8" y="-17" width="142" height="34" rx="10" fill="#0d0e12" stroke="#23262d"/>
+    <path d="M24 -4 C25 2 27 7 30 9 C33 6 36 0 37 -5" transform="translate(0,0)" fill="none" stroke="#8b9099" stroke-width="2" stroke-linecap="round"/>
+    <text x="92" y="6" font-size="21" font-family="'Caveat','Segoe Script','Comic Sans MS',cursive" fill="#F9F7F9">Vibe</text>
+  </g>
+
   <!-- subtitle -->
-  <text x="600" y="252" font-size="21" letter-spacing="8" text-anchor="middle" fill="#dcdcdc" opacity="0.92">NO QUEUE&#160;&#160;&#8594;&#160;&#160;INSTANT&#160;&#160;&#183;&#160;&#160;ZERO WAIT</text>
+  <text x="600" y="265" font-size="20" letter-spacing="7" text-anchor="middle" fill="#dcdcdc" opacity="0.92" font-family="'Geist Mono','JetBrains Mono','Consolas',monospace">NO QUEUE&#160;&#160;&#8594;&#160;&#160;INSTANT&#160;&#160;&#183;&#160;&#160;ZERO WAIT</text>
 
   <!-- pun line -->
-  <text x="600" y="292" font-size="15" letter-spacing="2" text-anchor="middle" fill="#8f8f8f">sounds like "no clue" — ships like it has every clue</text>
+  <text x="600" y="300" font-size="14" letter-spacing="1" text-anchor="middle" fill="#8b9099" font-family="'Geist Mono','JetBrains Mono','Consolas',monospace">sounds like "no clue" — ships like it has every clue</text>
 </svg>
