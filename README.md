@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://vinv.ai">
+  <a href="https://inversevibe.com">
     <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=0F89F1&center=true&vCenter=true&width=900&height=50&lines=noQbot+%3D+no+Queue+%E2%86%92+instant%2C+zero+wait.;Sounds+like+%22no+clue%22+%E2%80%94+actually+read+your+whole+repo.;Stop+the+AI+doom+loop.;Runtime+context+for+coding+agents%2C+the+moment+you+ask." alt="Typing SVG" />
   </a>
 </p>
@@ -64,8 +64,8 @@
 </p>
 
 <p align="center">
-  <a href="https://vinv.ai">
-    <img width="72%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/find.svg" alt="Enter Inverse Vibe — vinv.ai" />
+  <a href="https://inversevibe.com">
+    <img width="72%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/find.svg" alt="Enter Inverse Vibe — inversevibe.com" />
   </a>
 </p>
 
