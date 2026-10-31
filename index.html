@@ -1,154 +1,168 @@
 <!doctype html>
-<html lang="en" data-theme="vibe">
+<html lang="en" data-theme="calm">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>noQbot · Inverse Vibe</title>
 <meta name="description" content="noQbot — building Inverse Vibe (InVi): production readiness for functionally complete software.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 92'%3E%3Crect width='92' height='92' rx='22' fill='%230b0c10'/%3E%3Crect x='23' y='22' width='15' height='48' rx='7.5' fill='%2316181d'/%3E%3Crect x='23' y='22' width='15' height='20' rx='7.5' fill='%230F89F1'/%3E%3Cpath d='M49 29 C51 45 55 59 60 66 C65 58 70 42 73 30 C74 26 76 24 79 23' fill='none' stroke='%23F9F7F9' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <style>
-  :root{
-    --bg:#0a0b0d; --bg2:#101217; --card:#0d0f13; --line:#23262d; --line-2:#191c21;
-    --text:#EAEBED; --muted:#9298a0; --dim:#6b7077;
-    --blue:#0F89F1; --green:#7BB926; --vermilion:#E73424; --red:#E30110;
-    --glow:0 0 0 rgba(0,0,0,0);
-    --font:'Space Grotesk',system-ui,-apple-system,Segoe UI,sans-serif;
-    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
-    --script:'Caveat',cursive;
-    --r-card:16px; --r-btn:10px;
+  /* Real fonts, self-hosted from the console (Inter · Geist Mono · Caveat). */
+  @font-face{font-family:'Inter';src:url(assets/fonts/inter.woff2) format('woff2');font-weight:100 900;font-display:swap}
+  @font-face{font-family:'Geist Mono';src:url(assets/fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+  @font-face{font-family:'Caveat';src:url(assets/fonts/caveat.woff2) format('woff2');font-weight:400 700;font-display:swap}
+
+  /* ── Inverse / Calm (light, flat, hairline) — the product default ───────── */
+  :root[data-theme="calm"]{
+    --bg:#f9f7f9; --bg-2:#eef3f8; --card:#ffffff;
+    --ink:#111d28; --ink-soft:#2d3740; --muted:#525e69; --muted-2:#596570;
+    --line:#d9e5f0; --line-strong:#0f89f1; --edge:#94c0e6;
+    --mark:#0b68b7; --link:#0a5ea7; --primary:#0c72c9; --primary-hover:#0a65b2; --on-primary:#fff;
+    --ok:#7bb926; --ok-text:#496d16; --ok-bg:#ebf7dc;
+    --accent:#e30110; --warn:#e73424;
+    --glow:none; --card-shadow:none;
+    --cov-1:#0c72c9; --cov-2:#4f8f16; --cov-3:#0f766e; --cov-4:#5a52d6;
+    --display:700; --disp-track:-0.022em;
   }
-  :root[data-theme="inverse"]{
-    --bg:#f6f5f7; --bg2:#ffffff; --card:#ffffff; --line:#e4e2e7; --line-2:#eeecf0;
-    --text:#14151a; --muted:#565b63; --dim:#8b9099;
-    --blue:#0F74DA; --green:#4f8f16;
-    --glow:0 0 0 rgba(0,0,0,0);
-    --r-card:12px; --r-btn:8px;
+  /* ── Vibe (dark, alive, console) ────────────────────────────────────────── */
+  :root[data-theme="vibe"]{
+    --bg:#0a1722; --bg-2:#101e2b; --card:#0f1a23;
+    --ink:#f9f7f9; --ink-soft:#dbe4eb; --muted:#a9b9c6; --muted-2:#94a6b5;
+    --line:#1b2e3e; --line-strong:#4b6e8b; --edge:#4ba7f5;
+    --mark:#4fb0f7; --link:#4fb0f7; --primary:#0f89f1; --primary-hover:#2f9bf5; --on-primary:#fff;
+    --ok:#7bb926; --ok-text:#9ed65a; --ok-bg:rgba(123,185,38,.14);
+    --accent:#fe4c58; --warn:#ff7a4d;
+    --glow:0 0 32px -8px var(--primary); --card-shadow:0 0 0 1px rgba(79,176,247,.06);
+    --cov-1:#4ba7f5; --cov-2:#7bb926; --cov-3:#2bb6b0; --cov-4:#8a7bf0;
+    --display:700; --disp-track:-0.018em;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);
+  body{margin:0;background:var(--bg);color:var(--ink-soft);
+    font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
-    transition:background .25s ease,color .25s ease}
-  a{color:var(--blue);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
-  .mono{font-family:var(--mono)}
-  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim)}
-  .vibe-word{font-family:var(--script);font-weight:700}
+    transition:background .3s ease,color .3s ease}
+  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'Geist Mono',ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+  .kicker{font-family:'Geist Mono',ui-monospace,Consolas,monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--mark)}
+  .vibe-word{font-family:'Caveat',cursive;font-weight:700;letter-spacing:0}
+  h1,h2,h3,h4{color:var(--ink)}
 
-  /* top bar */
-  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);
-    background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+  /* header */
+  header{position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb,var(--bg) 84%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:-.2px}
-  .brand .mk{width:30px;height:30px}
-  .brand b{color:var(--text)} .brand .q{color:var(--blue)}
-  .right{display:flex;align-items:center;gap:18px}
-  .right .site{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .lockup{display:flex;align-items:center;gap:11px}
+  .mk{width:26px;height:26px;display:block}
+  .wordmark{font-family:'Geist Mono',monospace;font-weight:700;letter-spacing:.14em;
+    font-size:15px;color:var(--ink)}
+  .wordmark .q{color:var(--mark)}
+  .right{display:flex;align-items:center;gap:16px}
+  .right .site{font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted)}
   @media(max-width:560px){.right .site{display:none}}
-
-  /* segmented mode toggle */
-  .seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-btn);
-    padding:3px;background:var(--bg2);gap:2px}
-  .seg button{font-family:var(--font);font-size:12.5px;font-weight:600;letter-spacing:.3px;
-    border:0;background:transparent;color:var(--muted);padding:5px 12px;border-radius:6px;
-    cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.18s}
-  .seg button[aria-pressed="true"]{background:color-mix(in srgb,var(--blue) 15%,transparent);color:var(--blue)}
-  .seg .sq{width:10px;height:10px;border:2px solid currentColor;border-radius:2px}
-  .seg .zg{color:currentColor}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+  .seg button{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;border:0;background:transparent;
+    color:var(--muted);padding:5px 13px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.18s}
+  .seg button[aria-pressed="true"]{background:var(--primary);color:var(--on-primary)}
+  .seg .sq{width:9px;height:9px;border:1.8px solid currentColor;border-radius:2px}
 
   /* hero */
-  .hero{padding:84px 0 56px}
-  .hero h1{font-size:clamp(40px,8vw,72px);line-height:1.02;margin:0 0 18px;font-weight:700;letter-spacing:-1.5px}
-  .hero h1 .q{color:var(--blue)}
-  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:620px;margin:0 0 10px}
-  .modes{color:var(--dim);font-size:15px;margin:0 0 30px}
-  .modes b{color:var(--muted);font-weight:600}
+  .hero{padding:84px 0 54px}
+  .hero h1{margin:0 0 18px;font-weight:var(--display);line-height:1.0;letter-spacing:var(--disp-track);
+    font-size:clamp(44px,9vw,78px)}
+  .hero h1 .q{color:var(--mark)}
+  :root[data-theme="vibe"] .hero h1{text-shadow:0 0 40px rgba(79,176,247,.25)}
+  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--ink-soft);max-width:640px;margin:0 0 10px}
+  .lead b{color:var(--ink);font-weight:600}
+  .modes{color:var(--muted);font-size:15px;margin:0 0 30px}
+  .modes b{color:var(--ink-soft);font-weight:600}
   .cta{display:flex;gap:12px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;
-    padding:11px 20px;border-radius:999px;border:1px solid transparent;transition:.18s}
-  .btn.primary{background:var(--blue);color:#fff}
-  .btn.primary:hover{text-decoration:none;filter:brightness(1.08)}
-  :root[data-theme="vibe"] .btn.primary:hover{box-shadow:0 0 28px -6px var(--blue)}
-  .btn.ghost{border-color:var(--line);color:var(--text);background:var(--bg2)}
-  .btn.ghost:hover{text-decoration:none;border-color:var(--blue)}
+    padding:11px 20px;border-radius:999px;border:1px solid transparent;transition:.18s;cursor:pointer}
+  .btn.primary{background:var(--primary);color:var(--on-primary);box-shadow:var(--glow)}
+  .btn.primary:hover{text-decoration:none;background:var(--primary-hover)}
+  .btn.ghost{border-color:var(--line);color:var(--ink);background:var(--card)}
+  .btn.ghost:hover{text-decoration:none;border-color:var(--line-strong)}
 
   /* sections */
-  section{padding:48px 0;border-top:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;gap:16px}
-  .sec-head h2{font-size:clamp(22px,3vw,28px);margin:0;font-weight:600;letter-spacing:-.5px}
-  .sec-head p{margin:0;color:var(--muted);font-size:14px;max-width:420px;text-align:right}
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:26px;gap:16px}
+  .sec-head h2{font-size:clamp(22px,3vw,28px);margin:0;font-weight:700;letter-spacing:-.02em}
+  .sec-head p{margin:0;color:var(--muted);font-size:14px;max-width:440px;text-align:right}
   @media(max-width:560px){.sec-head{flex-direction:column;gap:6px}.sec-head p{text-align:left}}
 
-  .bio{font-size:18px;color:var(--text);max-width:680px;line-height:1.6}
-  .bio .status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);
-    font-size:13px;color:var(--muted);margin-top:18px}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .bio{font-size:18px;max-width:700px;line-height:1.6}
+  .bio b{color:var(--ink)}
+  .status{display:inline-flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted);margin-top:18px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:var(--glow)}
 
-  /* pillar grid */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  /* pillars */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(max-width:620px){.grid{grid-template-columns:1fr}}
-  .card{border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);
-    padding:22px;transition:.18s}
-  .card:hover{border-color:color-mix(in srgb,var(--blue) 50%,var(--line))}
-  :root[data-theme="vibe"] .card:hover{box-shadow:0 0 0 1px color-mix(in srgb,var(--blue) 30%,transparent)}
-  .card h3{margin:0 0 8px;font-size:19px;font-weight:600;display:flex;align-items:center;gap:9px}
-  .card h3 .tick{width:8px;height:8px;border-radius:2px;background:var(--blue)}
+  .card{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:22px;transition:.18s;box-shadow:var(--card-shadow)}
+  .card:hover{border-color:color-mix(in srgb,var(--cov) 60%,var(--line))}
+  :root[data-theme="vibe"] .card:hover{box-shadow:0 0 0 1px var(--cov),0 0 30px -10px var(--cov)}
+  .card h3{margin:0 0 8px;font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
+  .card h3 .tick{width:10px;height:10px;border-radius:3px;background:var(--cov)}
+  :root[data-theme="vibe"] .card h3 .tick{box-shadow:0 0 10px -1px var(--cov)}
   .card p{margin:0 0 14px;color:var(--muted);font-size:14.5px}
-  .card .meta{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.3px}
+  .card .meta{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--muted-2);letter-spacing:.02em}
 
   /* steps */
   .steps{display:flex;flex-direction:column}
-  .step{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line-2)}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line)}
   .step:first-child{border-top:0}
-  .step .n{font-family:var(--mono);font-size:13px;color:var(--blue);padding-top:3px}
-  .step .phase{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
-  .step h4{margin:3px 0 4px;font-size:17px;font-weight:600}
+  .step .n{font-family:'Geist Mono',monospace;font-size:13px;font-weight:600;color:var(--on-primary);
+    background:var(--primary);width:30px;height:30px;border-radius:999px;display:grid;place-items:center;box-shadow:var(--glow)}
+  :root[data-theme="calm"] .step .n{background:transparent;color:var(--mark);box-shadow:none;border:1px solid var(--line);width:30px}
+  .step .phase{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--muted-2);text-transform:uppercase}
+  .step h4{margin:2px 0 3px;font-size:17px;font-weight:600}
   .step p{margin:0;color:var(--muted);font-size:14.5px}
 
   /* proof */
-  .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .proof{display:grid;grid-template-columns:repeat(4,1fr)}
   @media(max-width:620px){.proof{grid-template-columns:repeat(2,1fr);gap:24px 0}}
-  .fig{padding:0 20px;border-left:1px solid var(--line)}
+  .fig{padding:0 22px;border-left:1px solid var(--line)}
   .fig:first-child{border-left:0;padding-left:0}
   @media(max-width:620px){.fig:nth-child(odd){border-left:0;padding-left:0}}
-  .fig .big{font-size:clamp(26px,4vw,34px);font-weight:700;letter-spacing:-.5px}
-  .fig .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--dim);margin-top:6px;line-height:1.4}
+  .fig .big{font-size:clamp(28px,4vw,36px);font-weight:700;letter-spacing:-.02em;color:var(--ok-text);font-variant-numeric:tabular-nums}
+  .fig .lbl{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted-2);margin-top:6px;line-height:1.45}
 
-  /* principles */
-  .walls{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  /* walls */
+  .walls{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media(max-width:620px){.walls{grid-template-columns:1fr}}
-  .wall{border:1px solid var(--line);border-radius:var(--r-card);padding:20px;background:var(--card)}
+  .wall{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--card);box-shadow:var(--card-shadow)}
   .wall h4{margin:0 0 6px;font-size:16px;font-weight:600}
   .wall p{margin:0;color:var(--muted);font-size:14px}
 
-  footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:8px}
+  footer{border-top:1px solid var(--line);padding:38px 0 56px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
   .foot .links{display:flex;gap:20px;font-size:14px}
-  .foot .fine{font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .foot .fine{font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted-2)}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href="#top" aria-label="noQbot home">
-      <svg class="mk" viewBox="0 0 92 92" aria-hidden="true">
-        <rect x="1" y="1" width="90" height="90" rx="22" fill="var(--card)" stroke="var(--blue)" stroke-opacity=".55"/>
-        <rect x="23" y="22" width="15" height="48" rx="7.5" fill="#16181d" stroke="#2a2e36"/>
-        <rect x="23" y="22" width="15" height="20" rx="7.5" fill="var(--blue)"/>
-        <path d="M49 29 C51 45 55 59 60 66 C65 58 70 42 73 30 C74 26 76 24 79 23" fill="none" stroke="var(--text)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <a class="lockup" href="#top" aria-label="noQbot">
+      <svg class="mk" viewBox="1.4 2 21.6 20" fill="none" aria-hidden="true">
+        <rect x="2.4" y="3" width="6" height="18" rx="1.8" stroke="var(--ink)" stroke-width="1.5"/>
+        <rect x="4" y="4.6" width="2.8" height="8" rx=".7" fill="var(--ink)"/>
+        <rect x="4" y="13.6" width="2.8" height="5.8" rx=".7" fill="var(--mark)"/>
+        <path transform="translate(6.4292 19.3742) scale(0.023373 -0.023373)" fill="var(--ink)" stroke="var(--ink)" stroke-width="21.39" stroke-linejoin="round" d="M264 -60Q259 -58 257 -54Q255 -50 253 -38Q253 -27 247 -22Q241 -17 224 -13Q213 -2 206 12.5Q199 27 195 59.5Q191 92 187 156Q189 191 190.5 215Q192 239 194 260Q196 281 198.5 305Q201 329 206 365Q204 388 208.5 415Q213 442 210 458Q217 480 219 508.5Q221 537 228 559Q230 576 232.5 591Q235 606 235 616Q233 636 239.5 658Q246 680 268 690Q274 692 284.5 692Q295 692 301 690Q317 683 319.5 668Q322 653 321 642Q323 631 323.5 604Q324 577 321.5 544.5Q319 512 312 481Q304 440 299.5 397.5Q295 355 293 314Q289 232 285 178Q281 124 284 100Q284 97 284.5 91.5Q285 86 287 82.5Q289 79 292 79Q296 80 298.5 85Q301 90 304.5 100Q308 110 314 123Q327 148 340.5 177.5Q354 207 364 234Q382 276 400 306Q418 336 434 373Q440 389 455.5 419.5Q471 450 485 476Q502 502 517.5 526Q533 550 554 590Q583 638 604 660.5Q625 683 641 683Q652 685 659.5 683.5Q667 682 674 672Q682 661 684 647Q686 633 677.5 611Q669 589 643 552Q623 522 598.5 482Q574 442 553.5 406.5Q533 371 524 354Q519 343 515 331Q511 319 503 309Q493 299 476 266Q459 233 443 201Q425 159 414.5 135.5Q404 112 397.5 97Q391 82 385 68Q379 54 370 33Q365 16 356.5 4Q348 -8 347 -14Q340 -25 322.5 -37Q305 -49 288 -56Q271 -63 264 -60Z"/>
       </svg>
-      <span><b>no</b><span class="q">Q</span><b>bot</b></span>
+      <span class="wordmark">no<span class="q">Q</span>bot</span>
     </a>
     <div class="right">
       <a class="site" href="https://inversevibe.com">inversevibe.com</a>
-      <div class="seg" role="group" aria-label="Theme mode">
-        <button id="m-inv" aria-pressed="false" title="Inverse — flat, exact"><span class="sq"></span>Inverse</button>
-        <button id="m-vibe" aria-pressed="true" title="Vibe — console, alive"><span class="zg">⌁</span><span class="vibe-word" style="font-size:16px">Vibe</span></button>
+      <div class="seg" role="group" aria-label="Mode">
+        <button id="m-calm" aria-pressed="true" title="Inverse — flat, exact, calm"><span class="sq"></span>Inverse</button>
+        <button id="m-vibe" aria-pressed="false" title="Vibe — console, alive">⌁ <span class="vibe-word" style="font-size:17px">Vibe</span></button>
       </div>
     </div>
   </div>
@@ -158,8 +172,8 @@
 
   <section class="hero" style="border-top:0">
     <h1>no<span class="q">Q</span>bot</h1>
-    <p class="lead">Building <strong style="color:var(--text);font-weight:600">Inverse Vibe</strong> — production readiness for functionally complete software, without changing what it does.</p>
-    <p class="modes">Two modes — <b>Inverse</b> (square, exact) · <span class="vibe-word" style="font-size:19px;color:var(--muted)">Vibe</span> (console, alive).</p>
+    <p class="lead">Building <b>Inverse Vibe</b> — production readiness for functionally complete software, without changing what it does.</p>
+    <p class="modes">Two modes — <b>Inverse</b> (square, exact) · <span class="vibe-word" style="font-size:19px;color:var(--ink-soft)">Vibe</span> (console, alive). <span style="color:var(--muted-2)">Flip it, top-right.</span></p>
     <div class="cta">
       <a class="btn primary" href="https://inversevibe.com">Enter Inverse <span class="vibe-word" style="font-size:19px">Vibe</span> &nbsp;→</a>
       <a class="btn ghost" href="https://github.com/noQbot">GitHub</a>
@@ -167,30 +181,30 @@
   </section>
 
   <section id="whoami">
-    <div class="sec-head"><h2>whoami</h2><p class="kicker">01 / 04</p></div>
-    <p class="bio">A bot that ships. Functionality is where most software stops — <strong style="color:var(--text)">InVi</strong> is where it gets <em>ready</em>: safer, faster, cheaper and compliant, every fix proven before it merges. Runs inside your walls; no code, data or prompt ever crosses.</p>
+    <div class="sec-head"><h2>whoami</h2><p class="kicker">01</p></div>
+    <p class="bio">A bot that ships. Functionality is where most software stops — <b>InVi</b> is where it gets <em>ready</em>: safer, faster, cheaper and compliant, every fix proven before it merges. Runs inside your walls; no code, data or prompt ever crosses.</p>
     <div class="status"><span class="dot"></span> online · zero queue · answering now</div>
   </section>
 
   <section id="building">
     <div class="sec-head"><h2>What I build</h2><p>Functionality stays fixed. Everything else gets better.</p></div>
     <div class="grid">
-      <div class="card">
+      <div class="card" style="--cov:var(--cov-1)">
         <h3><span class="tick"></span>Safer</h3>
         <p>No open path in. Every finding arrives with the input that proves it.</p>
         <div class="meta">owned by CISO · replaces pen tests</div>
       </div>
-      <div class="card">
+      <div class="card" style="--cov:var(--cov-2)">
         <h3><span class="tick"></span>Faster</h3>
         <p>Key requests and journeys on time, measured before and after every fix.</p>
         <div class="meta">owned by VP Engineering · replaces APM</div>
       </div>
-      <div class="card">
+      <div class="card" style="--cov:var(--cov-3)">
         <h3><span class="tick"></span>Cheaper</h3>
         <p>Less compute and fewer calls per thousand requests, with nothing lost.</p>
         <div class="meta">owned by CTO · replaces cloud cost tools</div>
       </div>
-      <div class="card">
+      <div class="card" style="--cov:var(--cov-4)">
         <h3><span class="tick"></span>Compliant</h3>
         <p>Regulation, your brand guide and your PRD — every duty, screen and requirement checked.</p>
         <div class="meta">owned by DPO · replaces audits</div>
@@ -201,11 +215,11 @@
   <section id="how">
     <div class="sec-head"><h2>How it works</h2><p>Functionally complete? That is where InVi starts.</p></div>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div><div class="phase">Map it</div><h4>Functionally complete</h4><p>It does what it should. Now make it production-ready.</p></div></div>
-      <div class="step"><div class="n">02</div><div><div class="phase">Map it</div><h4>Dora maps it</h4><p>A reinforcement-learning engine explores every screen, request, function and branch.</p></div></div>
-      <div class="step"><div class="n">03</div><div><div class="phase">Map it</div><h4>Baseline every behaviour</h4><p>What each input does, and the rules it must keep, confirmed on a second run.</p></div></div>
-      <div class="step"><div class="n">04</div><div><div class="phase">Optimise it</div><h4>Search for issues</h4><p>Detectors under each sub-metric find what to make safer, faster, cheaper and compliant.</p></div></div>
-      <div class="step"><div class="n">05</div><div><div class="phase">Optimise it</div><h4>Fix, run, score, merge</h4><p>A fix goes to a person to merge only when its metric rises and every behaviour holds.</p></div></div>
+      <div class="step"><div class="n">1</div><div><div class="phase">Map it</div><h4>Functionally complete</h4><p>It does what it should. Now make it production-ready.</p></div></div>
+      <div class="step"><div class="n">2</div><div><div class="phase">Map it</div><h4>Dora maps it</h4><p>A reinforcement-learning engine explores every screen, request, function and branch.</p></div></div>
+      <div class="step"><div class="n">3</div><div><div class="phase">Map it</div><h4>Baseline every behaviour</h4><p>What each input does, and the rules it must keep, confirmed on a second run.</p></div></div>
+      <div class="step"><div class="n">4</div><div><div class="phase">Optimise it</div><h4>Search for issues</h4><p>Detectors under each sub-metric find what to make safer, faster, cheaper and compliant.</p></div></div>
+      <div class="step"><div class="n">5</div><div><div class="phase">Optimise it</div><h4>Fix, run, score, merge</h4><p>A fix goes to a person to merge only when its metric rises and every behaviour holds.</p></div></div>
     </div>
   </section>
 
@@ -232,26 +246,23 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="links">
-      <a href="https://inversevibe.com">inversevibe.com</a>
-      <a href="https://github.com/noQbot">GitHub</a>
-    </div>
+    <div class="links"><a href="https://inversevibe.com">inversevibe.com</a><a href="https://github.com/noQbot">GitHub</a></div>
     <div class="fine">no humans were consulted in the making of this profile</div>
   </div>
 </footer>
 
 <script>
   (function(){
-    var root=document.documentElement, inv=document.getElementById('m-inv'), vibe=document.getElementById('m-vibe');
+    var root=document.documentElement, calm=document.getElementById('m-calm'), vibe=document.getElementById('m-vibe');
     function set(mode,save){
       root.setAttribute('data-theme',mode);
-      var isInv=mode==='inverse';
-      inv.setAttribute('aria-pressed',isInv); vibe.setAttribute('aria-pressed',!isInv);
+      var isVibe=mode==='vibe';
+      vibe.setAttribute('aria-pressed',isVibe); calm.setAttribute('aria-pressed',!isVibe);
       if(save){try{localStorage.setItem('iv-mode',mode)}catch(e){}}
     }
     var saved; try{saved=localStorage.getItem('iv-mode')}catch(e){}
-    set(saved==='inverse'?'inverse':'vibe',false);
-    inv.addEventListener('click',function(){set('inverse',true)});
+    set(saved==='vibe'?'vibe':'calm',false);
+    calm.addEventListener('click',function(){set('calm',true)});
     vibe.addEventListener('click',function(){set('vibe',true)});
   })();
 </script>
