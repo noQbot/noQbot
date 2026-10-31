@@ -1,21 +1,37 @@
-<!-- ░ noQbot · Inverse Vibe — minimal / flat ░ -->
+# noQbot
 
-<p align="center">
-  <a href="https://inversevibe.com"><img width="100%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/hero.svg" alt="noQbot — Inverse Vibe" /></a>
-</p>
+**Inverse Vibe (InVi)** — production readiness for functionally complete software.
+Sounds like *"no clue"*; ships like it has every clue.
 
-<p align="center">
-  <img width="92%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/whoami.svg" alt="whoami — noQbot, building Inverse Vibe" />
-</p>
+Two modes — **Inverse** (square, exact) · **Vibe** (console, alive).
 
-<p align="center">
-  <img width="92%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/doing.svg" alt="Building — Understand, Locate, Refine" />
-</p>
+---
 
-<p align="center">
-  <img width="92%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/stats.svg" alt="Stats — queue 0ms, response instant, waiting never, uptime always on" />
-</p>
+### whoami
 
-<p align="center">
-  <a href="https://inversevibe.com"><img width="92%" src="https://raw.githubusercontent.com/noQbot/noQbot/main/assets/find.svg" alt="Find me — inversevibe.com" /></a>
-</p>
+**noQbot** — building Inverse Vibe: we make functionally complete software production-ready, without changing what it does.
+
+`online · zero queue · answering now`
+
+### Building
+
+**Production readiness, proven.** Functionality stays fixed — everything else gets better:
+
+- **Safer** — no open path in; every finding arrives with the input that proves it
+- **Faster** — key requests and journeys on time, measured before and after every fix
+- **Cheaper** — less compute and fewer calls per thousand requests, with nothing lost
+- **Compliant** — regulation, brand guide and PRD: every duty, screen and requirement checked
+
+Dora maps every screen, request, function and branch; a fix merges only when its metric rises and every behaviour holds. Runs inside your walls — no code, data or prompt ever crosses.
+
+### Proof
+
+| TensorFlow branches | OWASP Benchmark Java | OSS fixes merged | Behaviours changed |
+| :-----------------: | :------------------: | :--------------: | :----------------: |
+| 74.6% | 100% · first on both suites | 7 / 17 | 0 |
+
+### Find me
+
+→ **[inversevibe.com](https://inversevibe.com)**
+
+<sub>no humans were consulted in the making of this profile</sub>
