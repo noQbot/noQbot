@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.2 1.8 22 20.6" fill="none">
-  <style>
-    .g { fill: #111113; stroke: #111113; }
-    .b { fill: #0b6ec2; }
-    @media (prefers-color-scheme: dark) {
-      .g { fill: #f4f4f5; stroke: #f4f4f5; }
-      .b { fill: #4fb0f7; }
-    }
-  </style>
-  <rect class="g" x="2.4" y="3" width="6" height="18" rx="1.8" fill="none" stroke-width="1.5" />
-  <rect class="g" x="4" y="4.6" width="2.8" height="8" rx=".7" stroke="none" />
-  <rect class="b" x="4" y="13.6" width="2.8" height="5.8" rx=".7" />
-  <path class="g" transform="translate(6.4292 19.3742) scale(0.023373 -0.023373)" stroke-width="21.39" stroke-linejoin="round" d="M264 -60Q259 -58 257 -54Q255 -50 253 -38Q253 -27 247 -22Q241 -17 224 -13Q213 -2 206 12.5Q199 27 195 59.5Q191 92 187 156Q189 191 190.5 215Q192 239 194 260Q196 281 198.5 305Q201 329 206 365Q204 388 208.5 415Q213 442 210 458Q217 480 219 508.5Q221 537 228 559Q230 576 232.5 591Q235 606 235 616Q233 636 239.5 658Q246 680 268 690Q274 692 284.5 692Q295 692 301 690Q317 683 319.5 668Q322 653 321 642Q323 631 323.5 604Q324 577 321.5 544.5Q319 512 312 481Q304 440 299.5 397.5Q295 355 293 314Q289 232 285 178Q281 124 284 100Q284 97 284.5 91.5Q285 86 287 82.5Q289 79 292 79Q296 80 298.5 85Q301 90 304.5 100Q308 110 314 123Q327 148 340.5 177.5Q354 207 364 234Q382 276 400 306Q418 336 434 373Q440 389 455.5 419.5Q471 450 485 476Q502 502 517.5 526Q533 550 554 590Q583 638 604 660.5Q625 683 641 683Q652 685 659.5 683.5Q667 682 674 672Q682 661 684 647Q686 633 677.5 611Q669 589 643 552Q623 522 598.5 482Q574 442 553.5 406.5Q533 371 524 354Q519 343 515 331Q511 319 503 309Q493 299 476 266Q459 233 443 201Q425 159 414.5 135.5Q404 112 397.5 97Q391 82 385 68Q379 54 370 33Q365 16 356.5 4Q348 -8 347 -14Q340 -25 322.5 -37Q305 -49 288 -56Q271 -63 264 -60Z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.5 0.8 21 21.6" fill="none"><!-- noQbot: a bot. Left eye square — Inverse. Right eye a Q whose tail runs through the bowl, a Q and a "no" sign at once — no Q, in Vibe blue. --><style>.i{fill:#111113}.is{stroke:#111113}.b{fill:#0b6ec2}.bs{stroke:#0b6ec2}@media (prefers-color-scheme:dark){.i{fill:#f4f4f5}.is{stroke:#f4f4f5}.b{fill:#4fb0f7}.bs{stroke:#4fb0f7}}</style><line class="is" x1="12" y1="6" x2="12" y2="3.6" stroke-width="1.5" stroke-linecap="round"/><circle class="b" cx="12" cy="2.6" r="1.35"/><rect class="is" x="2.75" y="6" width="18.5" height="15.5" rx="4" stroke-width="1.5" fill="none"/><rect class="i" x="6.1" y="10" width="3.6" height="3.6" rx=".6"/><circle class="bs" cx="15.4" cy="11.8" r="2.25" stroke-width="1.5" fill="none"/><line class="bs" x1="13.55" y1="9.95" x2="18.3" y2="14.7" stroke-width="1.5" stroke-linecap="round"/><rect class="i" x="8.6" y="16.6" width="6.8" height="1.6" rx=".8"/></svg>
